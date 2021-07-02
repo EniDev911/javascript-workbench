@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product App</title>
+	<!-- bootstrap CDN -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- NAVIGATION -->
+	<nav class="navbar navbar-light bg-info">
+		<a href="#" class="navbar-brand text-light">Stock Products</a>
+	</nav>
+	<div class="container">
+		<div id="App" class="row pt-5">
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="text-center">Add a Product</h4>
+					</div>
+					<form id="product-form" class="card-body" action="">
+						<!-- name input -->
+						<div class="form-group">
+							<input type="text" class="form-control" id="name" placeholder="Product Name">
+						</div>
+						<!-- quantity input -->
+						<div class="form-group">
+							<input type="number" class="form-control" id="quantity" min="1" max="100"
+								placeholder="Quantity units">
+						</div>
+						<!-- price input -->
+						<div class="form-group">
+							<input type="text" class="form-control" id="price" placeholder="Products Price">
+						</div>
+						<input type="submit" value="save" class="btn btn-primary btn-block">
+					</form>
+				</div>
+			</div>
+			<div id="product-list" class="col-md-8">
+			</div>
+		</div>
+	</div>
+	<!-- scripts  -->
+	<script src="App.js"></script>
+</body>
+
+</html>
