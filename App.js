@@ -14,12 +14,12 @@ class UI{
         const listProduct = document.getElementById('product-list');
         const element = document.createElement('div');
         element.innerHTML = `
-            <div class="card text-center mb-4">
+            <div class="card text-center mb-4 shadow">
                 <div class="card-body">
-                    <strong>Product</strong>: ${product.name}
-                    <strong>Quantity</strong>: ${product.quantity}
-                    <strong>Price</strong>: ${product.price}
-                    <a href="#" class="btn btn-danger" name="delete">Delete</a>
+                    <strong>Producto</strong>: ${product.name}
+                    <strong>Cantidad</strong>: ${product.quantity}
+                    <strong>Precio</strong>: ${product.price}
+                    <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
                 </div>
             </div>
         `;
@@ -30,9 +30,9 @@ class UI{
     }
     // delete
     deleteProduct(element){
-        if(element.name === 'delete'){
+        if(element.name === 'delete' && confirm('¿Estás seguro de eliminar el producto?')){
             element.parentElement.parentElement.parentElement.remove();
-            this.showMessage('Product deleted succesfully', 'warning')
+            this.showMessage('Producto eliminado exitosamente', 'warning')
         }
     }
     // messages
@@ -46,13 +46,15 @@ class UI{
         container.insertBefore(div, app);
         setTimeout(function(){
             document.querySelector('.alert').remove();
-        },1000);
+        },2000);
     }
 }
 
 // Eventos del DOM
 document.getElementById('product-form')
     .addEventListener('submit', function(e){
+        e.preventDefault();
+
         const name = document.getElementById('name').value;
         const qty = document.getElementById('quantity').value;
         const price = document.getElementById('price').value;
@@ -61,13 +63,13 @@ document.getElementById('product-form')
 
         const ui = new UI();
         if(name === '' || qty === '' || price === ''){
-            return ui.showMessage('All input are required', 'danger');
+            return ui.showMessage('Todos los campos son requeridos', 'danger');
         }
 
         ui.addProduct(product);
         ui.cleanBox();
-        ui.showMessage('Product added succesfully', 'success');
-        e.preventDefault();
+        ui.showMessage('Producto añadido exitosamente', 'success');
+
     });
 
 // Capturar el boton de eliminar
@@ -75,5 +77,4 @@ document.getElementById('product-list')
     .addEventListener('click', function(e){
         const ui = new UI();
         ui.deleteProduct(e.target);
-        
     });

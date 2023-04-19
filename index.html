@@ -12,32 +12,36 @@
 
 <body>
 	<!-- NAVIGATION -->
-	<nav class="navbar navbar-light bg-info">
-		<a href="#" class="navbar-brand text-light">Stock Products</a>
+	<nav class="navbar navbar-light bg-primary shadow">
+		<a href="#" class="navbar-brand text-light">🍊 Stock Productos</a>
 	</nav>
 	<div class="container">
 		<div id="App" class="row pt-5">
 			<div class="col-md-4">
-				<div class="card">
+				<div class="card shadow">
 					<div class="card-header">
-						<h4 class="text-center">Add a Product</h4>
+						<h4 class="text-center">Añadir productos</h4>
 					</div>
-					<form id="product-form" class="card-body" action="">
+					<form id="product-form" class="card-body" autocomplete="off">
 						<!-- name input -->
 						<div class="form-group">
-							<input type="text" class="form-control" id="name" placeholder="Product Name">
+							<input type="text" class="form-control" id="name" placeholder="Nombre producto" list="listado">
 						</div>
 						<!-- quantity input -->
 						<div class="form-group">
 							<input type="number" class="form-control" id="quantity" min="1" max="100"
-								placeholder="Quantity units">
+								placeholder="Cantidad unidades">
 						</div>
 						<!-- price input -->
 						<div class="form-group">
-							<input type="text" class="form-control" id="price" placeholder="Products Price">
+							<input type="text" class="form-control" id="price" placeholder="Precio producto">
 						</div>
-						<input type="submit" value="save" class="btn btn-primary btn-block">
+						<input type="submit" value="Añadir" class="btn btn-primary btn-block">
 					</form>
+					<datalist id="listado">
+						<option value="Naranja"></option>
+						<option value="Platano"></option>
+					</datalist>
 				</div>
 			</div>
 			<div id="product-list" class="col-md-8">
