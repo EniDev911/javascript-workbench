@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # DOM PRODUCTS JS
 
 ## Tecnologías
