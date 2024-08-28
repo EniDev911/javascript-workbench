@@ -1,5 +1,5 @@
 ## Projects
 
-- [arrays todolist js](arrays-todolist-js/)
-- [products html js](dom-products-js/)
+- [arrays todolist js](arrays-todolist-js/readme)
+- [products html js](dom-products-js/readme)
 

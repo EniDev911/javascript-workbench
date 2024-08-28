@@ -3,6 +3,6 @@
 
 @import "{{ site.theme }}";
 
-footer {
+footer, a.btn {
     display: none !important;
 }
