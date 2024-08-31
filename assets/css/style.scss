@@ -4,5 +4,9 @@
 @import "{{ site.theme }}";
 
 footer, a.btn {
-    display: none !important;
+	display: none !important;
+}
+
+.highlight pre {
+	tab-size: 2;
 }
