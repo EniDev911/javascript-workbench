@@ -112,6 +112,51 @@ class UI {
 }
 ``` 
 
+El siguiente método va a resetear el formulario:
+
+```js
+class UI {
+	addProduct(){
+		...
+	}
+	cleanBox(){
+		document.getElementById('product-form').reset();
+	}
+}
+```
+
+## Detectando los eventos en el Dom
+
+```js
+// Submit form
+document.getElementById('product-form')
+.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const qty = document.getElementById('quantity').value;
+  const price = document.getElementById('price').value;
+
+  const product = new Product(name, qty, price);
+
+  const ui = new UI();
+  if (name === '' || qty === '' || price === '') {
+    return ui.showMessage('Todos los campos son requeridos', 'danger');
+  }
+
+  ui.addProduct(product);
+  ui.cleanBox();
+  ui.showMessage('Producto añadido exitosamente', 'success');
+
+});
+
+// Capturar el boton de eliminar
+document.getElementById('product-list')
+.addEventListener('click', function(e) {
+  const ui = new UI();
+  ui.deleteProduct(e.target);
+});
+```
+
 ## Demo
 
 [![demo](../screenshot/dom-products-js.png)](https://enidev911.github.io/javascript-workbench/dom-products-js/)

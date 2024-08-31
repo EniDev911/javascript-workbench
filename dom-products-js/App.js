@@ -17,7 +17,7 @@ class UI {
     element.innerHTML = /*HTML*/ `
     <div class="card text-center mb-4 shadow">
       <div class="card-body">
-        <strong>Producto</strong>: ${product.name}
+      <strong>Producto</strong>: ${product.name}
         <strong>Cantidad</strong>: ${product.quantity}
         <strong>Precio</strong>: ${product.price}
         <a href="#" class="btn btn-danger" name="delete">Eliminar</a>
